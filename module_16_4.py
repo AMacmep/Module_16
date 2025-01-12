@@ -1,3 +1,5 @@
+# Домашнее задание по теме "Модели данных Pydantic"
+
 from fastapi import FastAPI, Path, HTTPException
 from pydantic import BaseModel
 from typing import List, Annotated
