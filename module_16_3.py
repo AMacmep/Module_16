@@ -22,7 +22,7 @@ async def user_register(username: Annotated[str, Path(min_length=5, max_length=2
 
 
 @app.put('/user/{user_id}/{username}/{age}')  # обновление в словаре
-async def update_user(user_id: int, username: str, age: int) -> str:
+async def update_user(user_id: int = Path(ge=1, le=100, description="Enter User ID", examples=1)) -> str:
     users[user_id] = f'Имя: {username}, возраст: {age}'
     return f'The user {user_id} is registered'
 
